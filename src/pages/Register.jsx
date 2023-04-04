@@ -18,7 +18,7 @@ export default function Register() {
     <Container component={"main"} maxWidth="xs" sx={{display:"flex",justifyContent:"center",alignContent:"center" ,height:"100vh",padding:theme.spacing(10),}}>
         <Card sx={{padding:2,backgroundColor:theme.palette.grey[200],width:theme.spacing(50)}}>
             <CssBaseline/>
-            <Box sx={{mt:8,display:"flex",flexDirection:"column",alignItems:"center"}}>
+            <Box sx={{mt:4,display:"flex",flexDirection:"column",alignItems:"center"}}>
                 <Avatar sx={{m:1,bgcolor:"secondary.main"}}>
                     <LockOutlined/>
                 </Avatar>

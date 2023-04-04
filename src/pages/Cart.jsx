@@ -46,7 +46,7 @@ export default function Cart() {
                                 </Box>
                                 <Box>
                                     <Typography variant='h5' paragraph></Typography>
-                                    {getSubtotal([{product,quantity}])?.toFixed(2)}
+                                    {"₹" + getSubtotal([{product,quantity}])?.toFixed(2)}
                                 </Box>
                             </CardContent>
                         </Card>
@@ -57,7 +57,7 @@ export default function Cart() {
                 <Box sx={{width:"100%",}}>
                     <Card sx={{padding:2,display:"flex",flexDirection:"column",gap:2}}>
                         <Typography variant='h4'> Subtotal</Typography>
-                        <Typography variant='h5'>{subtotal}</Typography>
+                        <Typography variant='h5'>{"₹"+subtotal}</Typography>
                         {subtotal>0 ? <Button onClick={checkoutItems} variant='contained'>Buy Now</Button>: <Button onClick={goToHome} variant='contained'>Shop Now</Button>}
                     </Card>
                 </Box>

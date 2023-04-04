@@ -10,6 +10,7 @@ import Checkout from './pages/Checkout'
 import AuthProvider from './firebase/Auth'
 import { useAuth } from './firebase/Auth';
 import Register from './pages/Register'
+import Profile from './pages/Profile'
 
 
 function ProtectedRoute({children}){
@@ -26,6 +27,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<Layout/>}>
         <Route index element={<Home/>} />
         <Route path="/cart" index element={<Cart/>} />
+        <Route path="/profile" index element={<Profile/>} />
         <Route path="/checkout" index element={
         <ProtectedRoute>
           <Checkout/>

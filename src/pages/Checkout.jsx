@@ -1,13 +1,15 @@
 import { Box, Button, Container, Paper, Step, StepLabel, Stepper, Typography } from '@mui/material'
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import AddressForm from '../components/AddressForm';
 import PaymentsForm from '../components/PaymentsForm';
 import ReviewForm from '../components/ReviewForm';
+import { addToBought } from '../feature/bought-slice';
 import { clearCart } from '../feature/cart-slice';
 import { clearCheckoutInformation } from '../feature/checkout-slice';
+import { getTodayDate } from '../utils';
 
 
 const steps = ["Shipping Address","Payment Details", "Review Order"];
@@ -25,9 +27,11 @@ function getStepContent(activeStep){
 }
 export default function Checkout() {
   const [activeStep, setActiveStep] = useState(0);
+  const cart = useSelector((state) => state.cart.value);
   const dispatch = useDispatch();
   useEffect(() => {
     if (activeStep === steps.length){
+      cart?.map(({product,quantity})=> dispatch(addToBought({product,quantity,date:getTodayDate()})));
       dispatch(clearCart());
       dispatch(clearCheckoutInformation());
     }

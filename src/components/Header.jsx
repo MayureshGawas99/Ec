@@ -143,6 +143,10 @@ export default function Header() {
     function navigateToCart(){
         navigate("/cart")
     }
+    function navigateToProfile(){
+        handleMenuClose();
+        navigate("/profile");
+    }
     function handleProfileMenuOpen(e){
         setAnchorEl(e.currentTarget);
     }
@@ -155,14 +159,14 @@ export default function Header() {
     }
     const renderMenu = (
         <Menu id='user-profile-menu' keepMounted transformOrigin={{horizontal:"right",vertical:"top",}} anchorOrigin={{horizontal:"right",vertical:"bottom",}} open={isMenuOpen} onClose={handleMenuClose} anchorEl={anchorEl}>
-            <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+            <MenuItem onClick={navigateToProfile}>Profile</MenuItem>
             <MenuItem onClick={handleMenuClose}>My Account</MenuItem>
             <MenuItem onClick={logout}>Logout</MenuItem>
         </Menu>
     )
   return (
     <>
-        <AppBar position='sticky' sx={{
+        <AppBar variant="elevation" position='sticky' sx={{
             py:0.5,mb:3
         }} >
             <Toolbar sx = {{display:"flex",gap:2}}>

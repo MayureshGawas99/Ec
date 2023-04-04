@@ -5,3 +5,12 @@ export function getItemCount(cartItems){
 export function getSubtotal(cartItem){
     return cartItem.reduce((sum,{product,quantity})=>product.price*quantity + sum,0)
 }
+
+export function getTodayDate(){
+    const date = new Date();
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    let currentDate = `${day}-${month}-${year}`;
+    return currentDate
+}

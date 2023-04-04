@@ -3,6 +3,7 @@ import checkoutReducer from "./feature/checkout-slice";
 import cartReducer from "./feature/cart-slice";
 import productsReducer from "./feature/products-slice";
 import categoriesReducer from "./feature/categories-slice";
+import boughtReducer from "./feature/bought-slice";
 
 export const store = configureStore({
     reducer:{
@@ -10,5 +11,6 @@ export const store = configureStore({
         products: productsReducer,
         categories: categoriesReducer,
         checkout: checkoutReducer,
+        bought: boughtReducer
     }
 });

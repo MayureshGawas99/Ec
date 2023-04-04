@@ -54,7 +54,7 @@ function OrderList(){
                   }} primary={product.title} secondary={`Qty: ${quantity}, Date:${date}`}></ListItemText>
                   <Typography variant="body2">{getSubtotal([{product,quantity}])?.toFixed(2)}</Typography>
                 </ListItem>
-                )): <Typography>No Orders</Typography>}
+                )): <Typography>No Order</Typography>}
         </Card>
     </Grid>
   )
